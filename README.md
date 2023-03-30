@@ -5,12 +5,13 @@ trojan client with privoxy for http proxy
 ## How to use
 
 ```bash
-docker run \
-    --name trojan-proxy \
-    -e REMOTE_ADDR="your host" \
-    -e PASSWORD="your password" \
-    -p trojan_port:1086 \
-    -p privoxy_port:1087 \
-    -d \
-    andyzhshg/trojan-privoxy
+docker run --rm \
+--name trojan-proxy \
+-e REMOTE_ADDR="remote-host" \
+-e REMOTE_PORT="remote-port" \
+-e PASSWORD="password" \
+-p 36180:1086 \
+-p 1087:1087 \
+-d \
+trojan-privoxy:latest
 ```
